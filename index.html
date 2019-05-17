@@ -11,7 +11,7 @@
     <div class="blur"></div>
     <div class="content text-center">
             <img class="icon" src="https://png2.kisspng.com/sh/31ffa321044fdf5cfae43a7b5951b55a/L0KzQYm3VcI6N6lvjJH0aYP2gLBuTf1icZ95fdDqbnPoPcjsgr1pd6R5gdDwLYPogsfwgBUueJ1mhp9rdYPsfrb6k714bZN4geZuLX3kebB7hf5idpRqRadrMHPoSYi8gvYyPWg7RqMCNEW7QYSCUcUzP2Y8SqoAM0e7Qoi1kP5o/kisspng-maintenance-web-hosting-service-plan-business-website-maintenance-5b0ce975bf1576.1745813915275728537827.png" alt=""> 
-            <div>
+            <div class="right">
                 <h1>საიტზე მიმდინარეობს რეკონსტრუქცია</h1>
                 <p><a target="_blank" href="http://archives.gov.ge">საქართველოს ეროვნული არქივი</a> მადლობას გიხდით მოთმინებისთვის</p>
             </div>
@@ -32,10 +32,10 @@ body{
     background-position: center center;
 }
 .blur, .content{
+    display: flex;
     position: absolute;
     width: 80%;
     height: 80vh;
-    display: flex;
     margin: 10vh 10vw;
     background: rgb(224, 224, 224);
     opacity: 0.9;
@@ -47,18 +47,16 @@ body{
 .wrapper{
     transition: all .2s ease-in-out;
 }
+.wrapper .right{
+    padding-right: 40px;
+    text-align: center;
+}
 .content{
     opacity: 1;
     background: rgba(224, 224, 224, 0);
     filter: blur(0px);
 }
 
-.wrapper:hover .content{
-    opacity: .2;
-}
-.wrapper:hover .blur{
-    opacity: 0;
-}
 .content .icon {
     width:50%;
 }
@@ -84,6 +82,21 @@ a{
     color: #000000;
     text-shadow: 0px 0px 1px #239cd7;
 }
+
+@media screen and (max-width: 800px){
+    .blur, .content{
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        height:50vh;
+    }
+    h1,h2,h3{
+        font-size: 2rem;
+    }
+    .wrapper .right{
+        padding: 0;
+        padding-top:20px;
+    }
+} 
 
 </style>
 
